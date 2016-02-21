@@ -1,0 +1,20 @@
+[package]
+name = "rotor-test"
+description = """
+    An utility library which helps writing tests for rotor-based applications
+    and libraries
+"""
+license = "MIT"
+readme = "README.rst"
+keywords = ["mio", "test", "unittest", "rotor"]
+homepage = "http://github.com/tailhook/rotor-test"
+version = "0.1.0"
+authors = ["paul@colomiets.name"]
+
+[dependencies]
+rotor = {git="git://github.com/tailhook/rotor", rev="08946ce"}
+matches = "0.1"
+
+[lib]
+name = "rotor_test"
+path = "src/lib.rs"
