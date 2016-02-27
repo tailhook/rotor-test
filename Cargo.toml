@@ -4,7 +4,7 @@ description = """
     An utility library which helps writing tests for rotor-based applications
     and libraries
 """
-license = "MIT"
+license = "Apache-2.0/MIT"
 readme = "README.rst"
 keywords = ["mio", "test", "unittest", "rotor"]
 homepage = "http://github.com/tailhook/rotor-test"
