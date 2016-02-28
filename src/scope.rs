@@ -4,6 +4,7 @@ use rotor::mio;
 use rotor::{Scope, Time, PollOpt, EventSet};
 use rotor::{_scope, _Timeo, _Notify, _LoopApi};
 
+/// Operation that was done with Scope
 #[derive(Debug, PartialEq, Eq)]
 pub enum Operation {
     Register(EventSet, PollOpt),
@@ -16,6 +17,10 @@ struct Handler {
     operations: Vec<Operation>,
 }
 
+/// A mock loop implementation
+///
+/// It's not actually fully working loop, just a thing which you can get
+/// a `Scope` object from.
 pub struct MockLoop<C> {
     event_loop: mio::EventLoop<Handler>,
     handler: Handler,
@@ -24,6 +29,10 @@ pub struct MockLoop<C> {
 }
 
 impl<C> MockLoop<C> {
+    /// Create a mock loop
+    ///
+    /// The `ctx` is a context, and it's type must be compatible
+    /// to your state machine.
     pub fn new(ctx: C) -> MockLoop<C> {
         let eloop = mio::EventLoop::new()
                 .expect("event loop is crated");
@@ -36,6 +45,9 @@ impl<C> MockLoop<C> {
             context: ctx,
         }
     }
+    /// Get a scope object for specified token
+    ///
+    /// This is useful to call state machine actions directly
     pub fn scope(&mut self, x: usize) -> Scope<C> {
         _scope(Time::zero(), mio::Token(x),
             &mut self.context,

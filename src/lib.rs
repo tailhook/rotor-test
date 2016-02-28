@@ -4,4 +4,4 @@ mod stream;
 mod scope;
 
 pub use stream::MemIo;
-pub use scope::MockLoop;
+pub use scope::{MockLoop, Operation};
