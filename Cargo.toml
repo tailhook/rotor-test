@@ -12,7 +12,7 @@ version = "0.1.0"
 authors = ["paul@colomiets.name"]
 
 [dependencies]
-rotor = {git="git://github.com/tailhook/rotor", rev="fc81471"}
+rotor = {git="git://github.com/tailhook/rotor", rev="d001aa3"}
 matches = "0.1"
 
 [lib]
