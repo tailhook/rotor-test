@@ -54,6 +54,10 @@ impl<C> MockLoop<C> {
             &mut self.channel,
             &mut self.handler)
     }
+
+    pub fn ctx(&mut self) -> &mut C {
+        &mut self.context
+    }
 }
 
 impl mio::Handler for Handler {
