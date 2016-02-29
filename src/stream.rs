@@ -91,7 +91,6 @@ impl io::Read for MemIo {
         let mut bufs = self.bufs();
         let bytes = min(val.len(), bufs.input.len());
         if bytes > 0 {
-            println!("val {:?}", val);
             assert_eq!(io::copy(
                 &mut io::Cursor::new(&bufs.input),
                 &mut io::Cursor::new(val))
