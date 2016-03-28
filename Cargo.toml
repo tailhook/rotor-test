@@ -8,12 +8,12 @@ license = "Apache-2.0/MIT"
 readme = "README.rst"
 keywords = ["mio", "test", "unittest", "rotor"]
 homepage = "http://github.com/tailhook/rotor-test"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["paul@colomiets.name"]
 
 [dependencies]
 rotor = "0.6.0"
-rotor-stream = {rev="1efbcac", git="git://github.com/tailhook/rotor-stream"}
+rotor-stream = "0.6.0"
 matches = "0.1"
 
 [lib]
