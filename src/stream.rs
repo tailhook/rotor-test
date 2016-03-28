@@ -4,6 +4,7 @@ use std::cmp::min;
 use std::sync::{Arc, Mutex, MutexGuard};
 
 use rotor::mio;
+use rotor_stream::SocketError;
 
 /// In memory stream
 ///
@@ -72,6 +73,12 @@ impl MemIo {
     }
     fn bufs(&self) -> MutexGuard<Bufs> {
         self.0.lock().expect("Poisoned MemIo (mock stream)")
+    }
+}
+
+impl SocketError for MemIo {
+    fn take_socket_error(&self) -> io::Result<()> {
+        Ok(())
     }
 }
 

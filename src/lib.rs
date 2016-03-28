@@ -1,4 +1,5 @@
 extern crate rotor;
+extern crate rotor_stream;
 
 mod stream;
 mod scope;
