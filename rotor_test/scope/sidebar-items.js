@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Operation","Operation that was done with Scope"]],"struct":[["MockLoop","A mock loop implementation"]]});
